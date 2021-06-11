@@ -25,8 +25,8 @@ namespace DatabaseFirstLINQ
             //ProblemEight();
             //ProblemNine();
             //ProblemTen();
-            ProblemEleven();
-            //ProblemTwelve();
+            //ProblemEleven();
+            ProblemTwelve();
             //ProblemThirteen();
             //ProblemFourteen();
             //ProblemFifteen();
@@ -175,14 +175,21 @@ namespace DatabaseFirstLINQ
                 Email = "david@gmail.com",
                 Password = "DavidsPass123"
             };
-            _context.Users.Add(newUser); //InsertOnSubmit() ?
+            _context.Users.Add(newUser);
             _context.SaveChanges();
         }
 
         private void ProblemTwelve()
         {
             // Create a new Product object and add that product to the Products table using LINQ.
-
+            Product newProduct = new Product()
+            {
+                Name = "Xbox Series X",
+                Description = "Next Gen Xbox console",
+                Price = 499
+            };
+            _context.Products.Add(newProduct);
+            _context.SaveChanges();
         }
 
         private void ProblemThirteen()
