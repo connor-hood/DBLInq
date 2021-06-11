@@ -24,8 +24,8 @@ namespace DatabaseFirstLINQ
             //ProblemSeven();
             //ProblemEight();
             //ProblemNine();
-            ProblemTen();
-            //ProblemEleven();
+            //ProblemTen();
+            ProblemEleven();
             //ProblemTwelve();
             //ProblemThirteen();
             //ProblemFourteen();
@@ -158,7 +158,7 @@ namespace DatabaseFirstLINQ
                 var cartResults = _context.ShoppingCarts.Include(item2 => item2.User).Include(item2 => item2.Product).Where(item2 => item2.UserId == item.User.Id).ToList();
                 foreach (var item2 in cartResults)
                 {
-                    Console.WriteLine(item2.User.Email + " " + item2.Product.Name + " " + item2.Product.Price + " " + item2.Quantity);
+                    Console.WriteLine($"Email: {item2.User.Email} Product: {item2.Product.Name} Price: {item2.Product.Price} Quantity: {item2.Quantity}");
                 }
             }
         }
@@ -175,7 +175,7 @@ namespace DatabaseFirstLINQ
                 Email = "david@gmail.com",
                 Password = "DavidsPass123"
             };
-            _context.Users.Add(newUser);
+            _context.Users.Add(newUser); //InsertOnSubmit() ?
             _context.SaveChanges();
         }
 
